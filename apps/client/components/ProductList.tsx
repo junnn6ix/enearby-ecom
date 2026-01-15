@@ -2,6 +2,7 @@ import { ProductType } from "@repo/types";
 import ProductCard from "./ProductCard";
 import Link from "next/link";
 import Filters from "./Filters";
+import { Suspense } from "react";
 
 // Dummy data
 // const productsas: ProductsType = [
@@ -191,7 +192,9 @@ const ProductList = async ({
       {params === "products" && (
         <div className="flex items-center justify-between mt-8">
           <h1 className="font-bold text-xl">All Products</h1>
-          <Filters />
+          <Suspense fallback={<div className="w-[180px] h-10" />}>
+            <Filters />
+          </Suspense>
         </div>
       )}
       <h1 className="text-xl font-bold my-8">{title}</h1>

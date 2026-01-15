@@ -2,6 +2,7 @@ import Banner from "@/components/Banner";
 import Categories from "@/components/Categories";
 import ProductList from "@/components/ProductList";
 import { CategoryType } from "@repo/types";
+import { Suspense } from "react";
 
 const fetchCategories = async () => {
   try {
@@ -39,7 +40,9 @@ const Page = async ({
   return (
     <div className="w-full space-y-8">
       <Banner />
-      <Categories categories={categories} />
+      <Suspense fallback={<div className="w-full h-12" />}>
+        <Categories categories={categories} />
+      </Suspense>
       <ProductList title="Categories" category={category} params="" />
     </div>
   );
