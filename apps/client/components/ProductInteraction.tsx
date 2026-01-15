@@ -93,7 +93,7 @@ const ProductInteraction = ({
               <SelectValue placeholder={"Size"} />
             </SelectTrigger>
             <SelectContent>
-              {product.sizes.map((size) => (
+              {product.sizes.map((size: string) => (
                 <SelectItem key={product.id + size} value={size} className="">
                   {size.toUpperCase()}
                 </SelectItem>
@@ -104,7 +104,7 @@ const ProductInteraction = ({
           {/* colors */}
           <RadioGroup defaultValue={productTypes.color}>
             <div className="flex items-center space-x-2">
-              {product.colors.map((color) => (
+              {product.colors.map((color: string) => (
                 <RadioGroupItem
                   key={product.id + color}
                   value={color}
