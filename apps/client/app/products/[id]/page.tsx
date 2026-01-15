@@ -2,6 +2,8 @@ import ProductInteraction from "@/components/ProductInteraction";
 import { ProductType } from "@repo/types";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 // Dummy
 // const product: ProductType = {
 //   id: 1,

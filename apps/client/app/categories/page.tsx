@@ -4,6 +4,8 @@ import ProductList from "@/components/ProductList";
 import { CategoryType } from "@repo/types";
 import { Suspense } from "react";
 
+export const dynamic = "force-dynamic";
+
 const fetchCategories = async () => {
   try {
     const res = await fetch(
