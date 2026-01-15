@@ -6,7 +6,7 @@ import { ArrowRight, Trash } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import useCartStore from "../stores/CartStore";
+import useCartStore from "@/app/stores/CartStore";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { toast } from "sonner";
 import StripePaymentForm from "@/components/StripePaymentForm";
