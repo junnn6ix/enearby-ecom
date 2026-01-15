@@ -1,6 +1,7 @@
 import ProductInteraction from "@/components/ProductInteraction";
 import { ProductType } from "@repo/types";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
@@ -26,11 +27,22 @@ export const dynamic = "force-dynamic";
 // };
 
 const fetchProduct = async (id: string) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_PRODUCT_SERVICE_URL}/products/${id}`
-  );
-  const data: ProductType = await res.json();
-  return data;
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_PRODUCT_SERVICE_URL}/products/${id}`,
+      { cache: "no-store" }
+    );
+
+    if (!res.ok) {
+      notFound();
+    }
+
+    const data: ProductType = await res.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching product:", error);
+    notFound();
+  }
 };
 
 export const generateMetadata = async ({
