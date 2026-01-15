@@ -20,7 +20,11 @@
         "NEXT_PUBLIC_CLERK_SIGN_UP_FALLBACK_REDIRECT_URL",
         "MONGO_URL",
         "STRIPE_SECRET_KEY",
-        "STRIPE_WEBHOOK_SECRET"
+        "STRIPE_WEBHOOK_SECRET",
+        "CLERK_PUBLISHABLE_KEY",
+        "GOOGLE_CLIENT_ID",
+        "GOOGLE_CLIENT_SECRET",
+        "GOOGLE_REFRESH_TOKEN"
       ]
     },
     "lint": {
