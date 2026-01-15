@@ -15,6 +15,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import ProfileButton from "./ProfileButton";
+import { Suspense } from "react";
 
 const Navbar = () => {
   return (
@@ -28,7 +29,9 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-5">
-        <SearchBar />
+        <Suspense fallback={<div className="hidden sm:flex w-48 h-9" />}>
+          <SearchBar />
+        </Suspense>
         <div className="flex items-center gap-2">
           {/* <Button variant="ghost" size="icon">
             <Bell />
